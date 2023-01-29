@@ -26,7 +26,7 @@ public class PublicEventsAPI {
         System.out.println("Retrieved " + events.size() + " events");
         List<Event> list = new ArrayList<>();
         for (GHEventInfo event : events) {
-            Event e = new Event(event.getId(), event.getRepository().getName(), event.getType(), event.getCreatedAt(), event.getActorLogin());
+            Event e = new Event(event.getId(), event.getRepoName(), event.getType(), event.getCreatedAt(), event.getActorLogin());
             list.add(e);
         }
         return list;
