@@ -1,0 +1,11 @@
+services:
+  prefect-server:
+    image: prefecthq/prefect:2-latest
+    ports:
+      - target: 4200
+        published: 4200
+    environment:
+      PREFECT_API_URL: "http://4.154.83.16:4200/api"
+      PREFECT_ORION_API_HOST: 4.154.83.16
+      PREFECT_ORION_API_PORT: 4200
+    command: prefect orion start --host 0.0.0.0
